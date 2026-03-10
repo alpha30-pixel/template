@@ -236,98 +236,102 @@ body{
 </div>
 
 <script>
-// Example: users.json
-const usersData = [
-  {
-    "id":1,
-    "topName":"TEEM ALPHA",
-    "image":"image/TA.png",
-    "placeName":"ALPHA",
-    "placeDesc":"بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
-    "social":[
-      {"name":"facebook","link":"https://facebook.com"},
-      {"name":"instagram","link":"https://instagram.com"},
-      {"name":"tiktok","link":"https://tiktok.com"},
-      {"name":"whatsapp","link":"https://wa.me/01150519460"}
-    ],
-    "contacts":[
-      {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
-      {"type":"email","icon":"fas fa-envelope","main":"info@example.com","sub":"البريد الإلكتروني","link":"mailto:info@example.com"},
-      {"type":"address","icon":"fas fa-map-marker-alt","main":"شارع العادلي - العزيزيه - البدرشين","sub":"العنوان","link":"https://www.google.com/maps/search/%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%84%D9%8A+-+%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D9%87+-+%D8%A7%D9%84%D8%A8%D8%AF%D8%B1%D8%B4%D9%8A%D9%86"}  
-    ],
-    "instructions":"الرجاء الالتزام بالمواعيد، ارتداء الكمامة، واحترام تعليمات المكان.",
-    "mapLink":"https://www.google.com/maps/search/%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%84%D9%8A+-+%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D9%87+-+%D8%A7%D9%84%D8%A8%D8%AF%D8%B1%D8%B4%D9%8A%D9%86"
-  }
-];
 
-// Load user by ID (for example ID = 1)
-const userID = 1;
+const params = new URLSearchParams(window.location.search);
+const userID = Number(params.get("id"));
+
+fetch("users.json")
+.then(res => res.json())
+.then(usersData => {
+
 const user = usersData.find(u => u.id === userID);
 
-if(user){
-  // Top name
-  document.getElementById('topName').textContent = user.topName || '';
-
-  // User image
-  if(user.image){
-    document.getElementById('userImage').src = user.image;
-  } else {
-    document.getElementById('userImageCard').style.display = 'none';
-  }
-
-  // Place name
-  const placeNameEl = document.getElementById('placeName');
-  if(user.placeName) placeNameEl.textContent = user.placeName;
-  else placeNameEl.style.display = 'none';
-
-  // Place desc
-  const placeDescEl = document.getElementById('placeDesc');
-  if(user.placeDesc) placeDescEl.textContent = user.placeDesc;
-  else placeDescEl.style.display = 'none';
-
-  // Social links
-  const socialEl = document.getElementById('socialLinks');
-  socialEl.innerHTML = '';
-  if(user.social && user.social.length){
-    user.social.forEach(s=>{
-      const a = document.createElement('a');
-      a.href = s.link;
-      a.target="_blank";
-      a.className = s.name;
-      a.innerHTML = `<i class="fab fa-${s.name}"></i><span>${s.name.charAt(0).toUpperCase() + s.name.slice(1)}</span>`;
-      socialEl.appendChild(a);
-    });
-  } else socialEl.style.display='none';
-
-  // Contacts
-  const contactsEl = document.getElementById('contactCards');
-  contactsEl.innerHTML = '';
-  if(user.contacts && user.contacts.length){
-    user.contacts.forEach(c=>{
-      const a = document.createElement('a');
-      a.href = c.link;
-      a.className='info-card-link';
-      a.innerHTML = `
-        <div class="icon-circle"><i class="${c.icon}"></i></div>
-        <div class="info-text">
-          <span class="info-main">${c.main}</span>
-          <span class="info-sub">${c.sub}</span>
-        </div>
-      `;
-      contactsEl.appendChild(a);
-    });
-  }
-
-  // Instructions
-  const instrEl = document.getElementById('instructions');
-  if(user.instructions) instrEl.textContent = user.instructions;
-  else instrEl.style.display='none';
-
-  // Map button
-  const mapBtn = document.getElementById('mapButton');
-  if(user.mapLink) mapBtn.href = user.mapLink;
-  else mapBtn.style.display='none';
+if(!user){
+document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير موجود</h2>";
+return;
 }
+
+// Top name
+document.getElementById('topName').textContent = user.topName || '';
+
+// Image
+if(user.image){
+document.getElementById('userImage').src = user.image;
+}else{
+document.getElementById('userImageCard').style.display='none';
+}
+
+// Place name
+if(user.placeName){
+document.getElementById('placeName').textContent=user.placeName;
+}else{
+document.getElementById('placeName').style.display='none';
+}
+
+// Place desc
+if(user.placeDesc){
+document.getElementById('placeDesc').textContent=user.placeDesc;
+}else{
+document.getElementById('placeDesc').style.display='none';
+}
+
+// Social
+const socialEl=document.getElementById("socialLinks");
+socialEl.innerHTML="";
+
+if(user.social){
+user.social.forEach(s=>{
+const a=document.createElement("a");
+a.href=s.link;
+a.target="_blank";
+a.className=s.name;
+a.innerHTML=`<i class="fab fa-${s.name}"></i><span>${s.name}</span>`;
+socialEl.appendChild(a);
+});
+}else{
+socialEl.style.display="none";
+}
+
+// Contacts
+const contactsEl=document.getElementById("contactCards");
+contactsEl.innerHTML="";
+
+if(user.contacts){
+user.contacts.forEach(c=>{
+const a=document.createElement("a");
+a.href=c.link || "#";
+a.className="info-card-link";
+
+a.innerHTML=`
+<div class="icon-circle">
+<i class="${c.icon}"></i>
+</div>
+<div class="info-text">
+<span class="info-main">${c.main}</span>
+<span class="info-sub">${c.sub}</span>
+</div>
+`;
+
+contactsEl.appendChild(a);
+});
+}
+
+// Instructions
+if(user.instructions){
+document.getElementById("instructions").textContent=user.instructions;
+}else{
+document.getElementById("instructions").style.display="none";
+}
+
+// Map
+if(user.mapLink){
+document.getElementById("mapButton").href=user.mapLink;
+}else{
+document.getElementById("mapButton").style.display="none";
+}
+
+});
+
 </script>
 
 </body>
