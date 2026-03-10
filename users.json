@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 1o1,
     "topName": "TEAM ALPHA",
     "image": "image/TA.png",
     "placeName": "ALPHA",
@@ -20,56 +20,18 @@
     "mapLink": "https://www.google.com/maps/search/%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%84%D9%8A+-+%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D9%87+-+%D8%A7%D9%84%D8%A8%D8%AF%D8%B1%D8%B4%D9%8A%D9%86"
   },
   {
-    "id": 2,
-    "topName": "TEEM BETA",
-    "image": "image/bg.png",
-    "placeName": "BETA",
-    "placeDesc": "صفحة اختبارية لمكان مختلف",
+    "id": 510326,
+    "topName": "TEAM ALPHA",
+    "image": "image/TA.png",
+    "placeName": "ALPHA",
+    "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
     "social": [
-      {"name":"facebook","link":"https://facebook.com/beta"},
-      {"name":"instagram","link":"https://instagram.com/beta"}
+      {"name":"instagram","link":"https://www.instagram.com/alpha_.eg1"},
+      {"name":"whatsapp","link":"https://wa.me/01150519460"}
     ],
     "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01234567890","sub":"رقم الهاتف","link":"tel:01234567890"},
-      {"type":"email","icon":"fas fa-envelope","main":"beta@example.com","sub":"البريد الإلكتروني","link":"mailto:beta@example.com"}
+      {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
+      {"type":"email","icon":"fas fa-envelope","main":"alpha009989@gmail.com","sub":"البريد الإلكتروني","link":"mailto:alpha009989@gmail.com?subject=التواصل%20مع%20ALPHA"}
     ],
-    "instructions": "الرجاء احترام المكان وعدم التدخين.",
-    "mapLink": "https://www.google.com/maps/search/Beta+Location"
-  },
-  {
-    "id": 3,
-    "topName": "TEEM BETA",
-    "image": "image/bg.png",
-    "placeName": "BETA",
-    "placeDesc": "صفحة اختبارية لمكان مختلف",
-    "social": [
-      {"name":"facebook","link":"https://facebook.com/beta"},
-      {"name":"tiktok","link":"https://tiktok.com"},
-      {"name":"instagram","link":"https://instagram.com/beta"}
-    ],
-    "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01234567890","sub":"رقم الهاتف","link":"tel:01234567890"},
-      {"type":"email","icon":"fas fa-envelope","main":"beta@example.com","sub":"البريد الإلكتروني","link":"mailto:beta@example.com"}
-    ],
-    "instructions": "الرجاء احترام المكان وعدم التدخين.",
-    "mapLink": "https://www.google.com/maps/search/Beta+Location"
-  },
-  {
-    "id": 4,
-    "topName": "TEEM BETA",
-    "image": "",
-    "placeName": "BETA",
-    "placeDesc": "صفحة اختبارية لمكان مختلف",
-    "social": [
-      {"name":"facebook","link":"https://facebook.com/beta"},
-      {"name":"tiktok","link":"https://tiktok.com"},
-      {"name":"instagram","link":"https://instagram.com/beta"}
-    ],
-    "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01234567890","sub":"رقم الهاتف","link":"tel:01234567890"},
-      {"type":"email","icon":"fas fa-envelope","main":"beta@example.com","sub":"البريد الإلكتروني","link":"mailto:beta@example.com"}
-    ],
-    "instructions": "الرجاء احترام المكان وعدم التدخين.",
-    "mapLink": "https://www.google.com/maps/search/Beta+Location"
-  }
+    "instructions": "الخدمات المتاحة:\n1- متاح شباب اشر اسكيت\n2- طباعة أعلام وتأجير شنطها\n3- متاح تصوير\n4- متاح دودج رام\n5- كروت NFC\n6- مونتاج\n7- جرافيك ديزاين\n8- تصوير دعاية كاملة\n9- إنشاء مواقع تعريف شخصي"
 ]
