@@ -9,7 +9,7 @@
       {"name":"facebook","link":"https://facebook.com"},
       {"name":"instagram","link":"https://instagram.com"},
       {"name":"tiktok","link":"https://tiktok.com"},
-      {"name":"whatsapp","link":"https://wa.me/01150519460"}
+      {"name":"whatsapp","link":"https://wa.me/201150519460"}
     ],
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
@@ -27,7 +27,7 @@
     "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
     "social": [
       {"name":"instagram","link":"https://www.instagram.com/alpha_.eg1"},
-      {"name":"whatsapp","link":"https://wa.me/01150519460"}
+      {"name":"whatsapp","link":"https://wa.me/201150519460"}
     ],
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
@@ -45,7 +45,7 @@
       {"name":"facebook","link":"https://facebook.com"},
       {"name":"instagram","link":"https://instagram.com"},
       {"name":"tiktok","link":"https://tiktok.com"},
-      {"name":"whatsapp","link":"https://wa.me/01150519460"}
+      {"name":"whatsapp","link":"https://wa.me/201150519460"}
     ],
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
@@ -60,7 +60,7 @@
     "topName": "TEAM ALPHA",
     "image": "image/DAL3ONA.png",
     "placeName": "DAL3ONA",
-    "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
+    "placeDesc": "معانا يومك اجمل بكتير",
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1ZfFe2dHrt/"},
       {"name":"instagram","link":"https://www.instagram.com/dal3ona_party?utm_source=qr&igsh=dnJvYWF0cGY0c21p"},
@@ -68,7 +68,7 @@
       {"name":"whatsapp","link":"https://wa.me/201023995889"}
     ],
     "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01119254197","sub":"رقم الهاتف","link":"tel:01119254197"},
-    ],
+      {"type":"phone","icon":"fas fa-phone","main":"01119254197","sub":"رقم الهاتف","link":"tel:01119254197"}
+    ]
   }
 ]
