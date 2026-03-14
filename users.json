@@ -70,5 +70,18 @@
       {"type":"phone","icon":"fas fa-phone","main":"01119254197","sub":"رقم الهاتف","link":"tel:01119254197"},
       {"type":"phone","icon":"fas fa-phone","main":"01023995889","sub":"رقم الهاتف","link":"tel:01023995889"}
     ]
+  },
+  {
+    "id": 914326,
+    "topName": "TEAM ALPHA",
+    "image": "image/dina.png",
+    "placeName": "Dr: DINA ADEL",
+    "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
+    
+    "contacts": [
+      {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"},
+      {"type":"email","icon":"fas fa-envelope","main":"adel9alsayd@gmail.com","sub":"البريد الإلكتروني","link":"adel9alsayd@gmail.com"}
+    ],
+    "instructions": "الرجاء الالتزام بالمواعيد، ارتداء الكمامة، واحترام تعليمات المكان."
   }
 ]
