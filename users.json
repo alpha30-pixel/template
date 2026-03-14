@@ -68,7 +68,8 @@
       {"name":"whatsapp","link":"https://wa.me/201023995889"}
     ],
     "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01119254197","sub":"رقم الهاتف","link":"tel:01119254197"}
+      {"type":"phone","icon":"fas fa-phone","main":"01119254197","sub":"رقم الهاتف","link":"tel:01119254197"},
+      {"type":"phone","icon":"fas fa-phone","main":"01023995889","sub":"رقم الهاتف","link":"tel:01023995889"}
     ]
   }
 ]
