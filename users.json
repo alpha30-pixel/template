@@ -39,8 +39,7 @@
   },
   {
     "id": 611326,
-    "image": "image/dina.jpg",
-    "bgImage": "image/bg.jpg",
+    "bgImage": "image/dina.jpg",
     "placeName": "Dr: DINA ADEL",
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"}
