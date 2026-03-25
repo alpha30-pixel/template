@@ -27,7 +27,7 @@ body{
 .header{
   position:relative;
   height:25vh;
-  background:url("image/bg.jpg") center/cover no-repeat;
+  background:center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -207,24 +207,21 @@ body{
 .map-button:hover{
   background:#1a5fb4;
 }
-
 .create-site{
-text-align:center;
-margin-top:15px;
+  text-align:center;
+  margin-top:15px;
 }
-
 .create-site a{
-color:#000;
-font-size:20px;
-text-decoration:none;
-border-bottom:1px dashed #aaa;
-padding-bottom:3px;
-transition:0.3s;
+  color:#000;
+  font-size:20px;
+  text-decoration:none;
+  border-bottom:1px dashed #aaa;
+  padding-bottom:3px;
+  transition:0.3s;
 }
-
 .create-site a:hover{
-color:#2c7be5;
-border-color:#2c7be5;
+  color:#2c7be5;
+  border-color:#2c7be5;
 }
 </style>
 </head>
@@ -249,12 +246,13 @@ border-color:#2c7be5;
 
   <div id="contactCards"></div>
 
-  <div class="instructions" id="instructions">الرجاء الالتزام بالمواعيد، ارتداء الكمامة، واحترام تعليمات المكان.</div>
+  <div class="instructions" id="instructions"></div>
 
   <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
+
   <div class="create-site">
     <a href="https://alpha30-pixel.github.io/template/p.html?id=510326" target="_blank">
-    لو عايز تعمل صفحه و كارد زاي دول دوس هنا
+      لو عايز تعمل صفحه و كارد زاي دول دوس هنا
     </a>
   </div>
 </div>
@@ -273,6 +271,14 @@ const user = usersData.find(u => u.id === userID);
 if(!user){
 document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير موجود</h2>";
 return;
+}
+
+// 🔥 الخلفية
+const header = document.querySelector(".header");
+if(user.bgImage){
+  header.style.backgroundImage = `url('${user.bgImage}')`;
+}else{
+  header.style.backgroundImage = "url('image/bg.jpg')";
 }
 
 // Top name
