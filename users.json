@@ -80,6 +80,9 @@
       {"name":"instagram","link":"https://www.instagram.com/_skate_lovers?igsh=MWN5ZjU4cWE2cWU5MA%3D%3D&utm_source=qr"},
       {"name":"tiktok","link":"https://www.tiktok.com/@_skate_lovers?_r=1&_t=ZS-94zZhHdnaEK"},
       {"name":"whatsapp","link":"https://wa.me/201009900331"}
+    ],
+    "contacts": [
+      {"type":"phone","icon":"fas fa-phone","main":"01009900331","sub":"رقم الهاتف","link":"tel:01009900331"}
     ]
   }
 ]
