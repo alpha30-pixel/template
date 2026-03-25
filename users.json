@@ -74,21 +74,12 @@
   {
     "id": 1125326,
     "bgImage": "image/bg.jpg",
-    "image": "image/TA.png",
+    "image": "image/sl.jpg",
     "placeName": "SKATE LOVERS",
-    "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
     "social": [
-      {"name":"facebook","link":"https://facebook.com"},
       {"name":"instagram","link":"https://www.instagram.com/_skate_lovers?igsh=MWN5ZjU4cWE2cWU5MA%3D%3D&utm_source=qr"},
       {"name":"tiktok","link":"https://www.tiktok.com/@_skate_lovers?_r=1&_t=ZS-94zZhHdnaEK"},
       {"name":"whatsapp","link":"https://wa.me/201009900331"}
     ],
-    "contacts": [
-      {"type":"phone","icon":"fas fa-phone","main":"01150519460","sub":"رقم الهاتف","link":"tel:01150519460"},
-      {"type":"email","icon":"fas fa-envelope","main":"info@example.com","sub":"البريد الإلكتروني","link":"mailto:info@example.com"},
-      {"type":"address","icon":"fas fa-map-marker-alt","main":"شارع العادلي - العزيزيه - البدرشين","sub":"العنوان","link":""}
-    ],
-    "instructions": "الرجاء الالتزام بالمواعيد، ارتداء الكمامة، واحترام تعليمات المكان.",
-    "mapLink": "https://www.google.com/maps/search/%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%84%D9%8A+-+%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D9%87+-+%D8%A7%D9%84%D8%A8%D8%AF%D8%B1%D8%B4%D9%8A%D9%86"
   }
 ]
