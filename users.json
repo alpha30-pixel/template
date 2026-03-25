@@ -2,6 +2,7 @@
   {
     "id": 101,
     "topName": "TEAM ALPHA",
+    "bgImage": "image/bg2.jpg",
     "image": "image/TA.png",
     "placeName": "ALPHA",
     "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
@@ -38,6 +39,7 @@
   {
     "id": 611326,
     "image": "image/dina.jpg",
+    "bgImage": "image/bg2.jpg",
     "placeName": "Dr: DINA ADEL",
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"}
@@ -46,6 +48,7 @@
   {
     "id": 414326,
     "image": "image/DAL3ONA.png",
+    "bgImage": "image/bg2.jpg",
     "placeName": "DAL3ONA",
     "placeDesc": "معانا يومك اجمل بكتير",
     "social": [
@@ -62,6 +65,7 @@
   {
     "id": 914326,
     "image": "image/dina.jpg",
+    "bgImage": "image/bg2.jpg",
     "placeName": "Dr: DINA ADEL",
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"}
