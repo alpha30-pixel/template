@@ -130,10 +130,8 @@ body{
   border-radius:12px;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
   cursor:pointer;
   box-shadow:0 4px 15px rgba(0,0,0,0.25);
-  transition:0.3s;
   text-decoration:none;
 }
 .info-card-link:hover{
@@ -156,7 +154,6 @@ body{
 .info-main{
   font-size:18px;
   font-weight:bold;
-  color:#000;
 }
 .info-sub{
   font-size:14px;
@@ -179,6 +176,19 @@ body{
   border-radius:12px;
   text-decoration:none;
   display:block;
+}
+.create-site{
+  text-align:center;
+  margin-top:15px;
+}
+.create-site a{
+  color:#000;
+  font-size:20px;
+  text-decoration:none;
+  border-bottom:1px dashed #aaa;
+}
+.create-site a:hover{
+  color:#2c7be5;
 }
 </style>
 </head>
@@ -207,6 +217,13 @@ body{
   <div class="instructions" id="instructions"></div>
 
   <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
+
+  <!-- 🔥 رجعنا الجزء ده -->
+  <div class="create-site">
+    <a href="https://alpha30-pixel.github.io/template/p.html?id=510326" target="_blank">
+      لو عايز تعمل صفحه و كارد زاي دول دوس هنا
+    </a>
+  </div>
 
 </div>
 
@@ -271,7 +288,7 @@ socialEl.appendChild(a);
 socialEl.style.display="none";
 }
 
-// الكروت (تليفون + PDF)
+// الكروت
 const contactsEl=document.getElementById("contactCards");
 
 // Contacts
