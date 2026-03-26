@@ -41,15 +41,6 @@ body{
   font-size:22px;
   letter-spacing:4px;
 }
-.top-bar img{
-  width:70px;
-  height:70px;
-  object-fit:contain;
-  order:2;
-}
-.top-bar span{
-  order:1;
-}
 .header::after{
   content:"";
   position:absolute;
@@ -144,7 +135,6 @@ body{
   box-shadow:0 4px 15px rgba(0,0,0,0.25);
   transition:0.3s;
   text-decoration:none;
-  position:relative;
 }
 .info-card-link:hover{
   background:#f0f0f0;
@@ -158,16 +148,10 @@ body{
   align-items:center;
   justify-content:center;
   margin-right:10px;
-  flex-shrink:0;
-}
-.info-card-link i{
-  font-size:20px;
-  color:#000;
 }
 .info-text{
   display:flex;
   flex-direction:column;
-  text-align:left;
 }
 .info-main{
   font-size:18px;
@@ -176,19 +160,14 @@ body{
 }
 .info-sub{
   font-size:14px;
-  font-weight:300;
   color:#555;
-  margin-top:3px;
 }
 .instructions{
   margin:15px 10px;
   padding:15px;
   background:#f9f9f9;
   border-radius:12px;
-  color:#222;
   font-size:18px;
-  line-height:1.5;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
   white-space: pre-line;
 }
 .map-button{
@@ -196,50 +175,29 @@ body{
   padding:15px;
   background:#2c7be5;
   color:white;
-  font-size:18px;
-  font-weight:bold;
   text-align:center;
   border-radius:12px;
   text-decoration:none;
   display:block;
-  transition:0.3s;
-}
-.map-button:hover{
-  background:#1a5fb4;
-}
-.create-site{
-  text-align:center;
-  margin-top:15px;
-}
-.create-site a{
-  color:#000;
-  font-size:20px;
-  text-decoration:none;
-  border-bottom:1px dashed #aaa;
-  padding-bottom:3px;
-  transition:0.3s;
-}
-.create-site a:hover{
-  color:#2c7be5;
-  border-color:#2c7be5;
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
   <div class="header">
     <div class="top-bar">
-      <span id="topName">TEAM ALPHA</span>
+      <span id="topName"></span>
     </div>
   </div>
 
   <div class="info-card" id="userImageCard">
-    <img src="image/TA.png" id="userImage">
+    <img src="" id="userImage">
   </div>
 
-  <div class="place-name" id="placeName">ALPHA</div>
-  <div class="place-desc" id="placeDesc">بنختلف عن غيرنا كتير و بنساعدك تكون مختلف</div>
+  <div class="place-name" id="placeName"></div>
+  <div class="place-desc" id="placeDesc"></div>
 
   <div class="follow">تابعونا على</div>
   <div class="social-icons" id="socialLinks"></div>
@@ -250,11 +208,6 @@ body{
 
   <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
 
-  <div class="create-site">
-    <a href="https://alpha30-pixel.github.io/template/p.html?id=510326" target="_blank">
-      لو عايز تعمل صفحه و كارد زاي دول دوس هنا
-    </a>
-  </div>
 </div>
 
 <script>
@@ -273,42 +226,38 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-// 🔥 الخلفية
+// الخلفية
 const header = document.querySelector(".header");
-if(user.bgImage){
-  header.style.backgroundImage = `url('${user.bgImage}')`;
-}else{
-  header.style.backgroundImage = "url('image/bg.jpg')";
+header.style.backgroundImage = `url('${user.bgImage || "image/bg.jpg"}')`;
+
+// الاسم
+if(user.topName){
+document.getElementById('topName').textContent = user.topName;
 }
 
-// Top name
-document.getElementById('topName').textContent = user.topName || '';
-
-// Image
+// الصورة
 if(user.image){
 document.getElementById('userImage').src = user.image;
 }else{
 document.getElementById('userImageCard').style.display='none';
 }
 
-// Place name
+// الاسم الرئيسي
 if(user.placeName){
 document.getElementById('placeName').textContent=user.placeName;
 }else{
 document.getElementById('placeName').style.display='none';
 }
 
-// Place desc
+// الوصف
 if(user.placeDesc){
 document.getElementById('placeDesc').textContent=user.placeDesc;
 }else{
 document.getElementById('placeDesc').style.display='none';
 }
 
-// Social
+// السوشيال
 const socialEl=document.getElementById("socialLinks");
-socialEl.innerHTML="";
-
 if(user.social){
 user.social.forEach(s=>{
 const a=document.createElement("a");
@@ -322,10 +271,10 @@ socialEl.appendChild(a);
 socialEl.style.display="none";
 }
 
-// Contacts
+// الكروت (تليفون + PDF)
 const contactsEl=document.getElementById("contactCards");
-contactsEl.innerHTML="";
 
+// Contacts
 if(user.contacts){
 user.contacts.forEach(c=>{
 const a=document.createElement("a");
@@ -333,9 +282,7 @@ a.href=c.link || "#";
 a.className="info-card-link";
 
 a.innerHTML=`
-<div class="icon-circle">
-<i class="${c.icon}"></i>
-</div>
+<div class="icon-circle"><i class="${c.icon}"></i></div>
 <div class="info-text">
 <span class="info-main">${c.main}</span>
 <span class="info-sub">${c.sub}</span>
@@ -346,14 +293,32 @@ contactsEl.appendChild(a);
 });
 }
 
-// Instructions
+// PDF
+if(user.pdf){
+const a=document.createElement("a");
+a.href=user.pdf;
+a.target="_blank";
+a.className="info-card-link";
+
+a.innerHTML=`
+<div class="icon-circle"><i class="fas fa-file-pdf"></i></div>
+<div class="info-text">
+<span class="info-main">عرض الملف</span>
+<span class="info-sub">اضغط لفتح PDF</span>
+</div>
+`;
+
+contactsEl.appendChild(a);
+}
+
+// instructions
 if(user.instructions){
 document.getElementById("instructions").textContent=user.instructions;
 }else{
 document.getElementById("instructions").style.display="none";
 }
 
-// Map
+// map
 if(user.mapLink){
 document.getElementById("mapButton").href=user.mapLink;
 }else{
