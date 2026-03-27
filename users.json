@@ -42,6 +42,12 @@
     "bgImage": "image/dina.jpg",
     "pdf": "files/DINA.pdf",
     "placeName": "Dr: DINA ADEL",
+    "social": [
+      {"name":"facebook","link":"https://www.facebook.com/adle.dina?mibextid=ZbWKwL"},
+      {"name":"instagram","link":"https://www.instagram.com/adledina?igsh=YTc5dmRmNnprNHFw"},
+      {"name":"tiktok","link":"https://www.tiktok.com/@dietation2?_r=1&_t=ZS-950qyyazhlX"},
+      {"name":"whatsapp","link":"https://wa.me/201126822106"}
+    ],
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"}
     ]
