@@ -16,6 +16,7 @@ body{
   display:flex;
   justify-content:center;
 }
+
 .container{
   width:100%;
   max-width:500px;
@@ -24,14 +25,20 @@ body{
   position:relative;
   padding-bottom:20px;
 }
+
+/* ✅ تعديل الهيدر */
 .header{
   position:relative;
-  height:25vh;
-  background:center/cover no-repeat;
+  min-height:200px;
+  height:auto;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
   display:flex;
   justify-content:center;
   align-items:center;
 }
+
 .top-bar{
   display:flex;
   align-items:center;
@@ -41,6 +48,7 @@ body{
   font-size:22px;
   letter-spacing:4px;
 }
+
 .header::after{
   content:"";
   position:absolute;
@@ -52,21 +60,24 @@ body{
   border-top-left-radius:100% 80px;
   border-top-right-radius:100% 80px;
 }
+
 .info-card{
   position:absolute;
   right:20px;
-  top:calc(25vh - 70px);
+  top:calc(200px - 70px);
   width:120px;
   height:120px;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
+
 .info-card img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
 .place-name{
   margin-top:90px;
   padding-right:20px;
@@ -75,6 +86,7 @@ body{
   font-weight:bold;
   color:#2c7be5;
 }
+
 .place-desc{
   padding-right:20px;
   text-align:right;
@@ -84,18 +96,21 @@ body{
   line-height:1.6;
   margin-top:5px;
 }
+
 .follow{
   margin-top:25px;
   text-align:center;
   font-size:18px;
   font-weight:bold;
 }
+
 .social-icons{
   margin-top:15px;
   display:flex;
   justify-content:space-between;
   padding:0 10px;
 }
+
 .social-icons a{
   flex:1;
   margin:0 5px;
@@ -110,19 +125,29 @@ body{
   transition:0.3s;
   text-decoration:none;
 }
+
 .social-icons a span{
   font-size:14px;
   margin-top:5px;
 }
+
 .social-icons a.facebook{ background:#1877F2; }
+
 .social-icons a.instagram{
   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
 }
-.social-icons a.tiktok{ background: #010101; }
-.social-icons a.whatsapp{ background: #25D366; }
+
+.social-icons a.tiktok{ background:#010101; }
+
+.social-icons a.whatsapp{ background:#25D366; }
+
+/* ✅ إضافة يوتيوب */
+.social-icons a.youtube{ background:#FF0000; }
+
 .social-icons a:hover{
   transform:scale(1.05);
 }
+
 .info-card-link{
   margin:15px 10px;
   padding:15px;
@@ -134,9 +159,11 @@ body{
   box-shadow:0 4px 15px rgba(0,0,0,0.25);
   text-decoration:none;
 }
+
 .info-card-link:hover{
   background:#f0f0f0;
 }
+
 .icon-circle{
   width:40px;
   height:40px;
@@ -148,19 +175,23 @@ body{
   margin-right:10px;
   color:#000;
 }
+
 .info-text{
   display:flex;
   flex-direction:column;
 }
+
 .info-main{
   font-size:18px;
   font-weight:bold;
   color:#000;
 }
+
 .info-sub{
   font-size:14px;
   color:#555;
 }
+
 .instructions{
   margin:15px 10px;
   padding:15px;
@@ -169,6 +200,7 @@ body{
   font-size:18px;
   white-space: pre-line;
 }
+
 .map-button{
   margin:20px 10px;
   padding:15px;
@@ -179,16 +211,19 @@ body{
   text-decoration:none;
   display:block;
 }
+
 .create-site{
   text-align:center;
   margin-top:15px;
 }
+
 .create-site a{
   color:#000;
   font-size:20px;
   text-decoration:none;
   border-bottom:1px dashed #aaa;
 }
+
 .create-site a:hover{
   color:#2c7be5;
 }
@@ -220,13 +255,11 @@ body{
 
   <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
 
-  <!-- 🔥 رجعنا الجزء ده -->
   <div class="create-site">
     <a href="https://alpha30-pixel.github.io/template/p.html?id=510326" target="_blank">
       لو عايز تعمل صفحه و كارد زاي دول دوس هنا
     </a>
   </div>
-
 </div>
 
 <script>
@@ -245,9 +278,22 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-// الخلفية
+/* ✅ حل مشكلة الصور */
 const header = document.querySelector(".header");
-header.style.backgroundImage = `url('${user.bgImage || "image/bg.jpg"}')`;
+
+const img = new Image();
+img.src = user.bgImage || "image/bg.jpg";
+
+img.onload = function(){
+  header.style.backgroundImage = `url('${img.src}')`;
+
+  if(img.height > img.width){
+    header.style.backgroundSize = "contain";
+    header.style.backgroundColor = "#000";
+  }else{
+    header.style.backgroundSize = "cover";
+  }
+};
 
 // الاسم
 if(user.topName){
@@ -277,6 +323,7 @@ document.getElementById('placeDesc').style.display='none';
 
 // السوشيال
 const socialEl=document.getElementById("socialLinks");
+
 if(user.social){
 user.social.forEach(s=>{
 const a=document.createElement("a");
@@ -293,7 +340,6 @@ socialEl.style.display="none";
 // الكروت
 const contactsEl=document.getElementById("contactCards");
 
-// Contacts
 if(user.contacts){
 user.contacts.forEach(c=>{
 const a=document.createElement("a");
