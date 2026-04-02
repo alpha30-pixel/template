@@ -26,20 +26,37 @@ body{
   padding-bottom:20px;
 }
 
-/* ✅ تعديل الهيدر */
+/* ✅ الهيدر الجديد */
 .header{
   position:relative;
-  min-height:200px;
-  height:auto;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-size:cover;
+  min-height:220px;
   display:flex;
   justify-content:center;
   align-items:center;
+  overflow:hidden;
+}
+
+/* خلفية Blur */
+.bg-cover{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:cover;
+  filter:blur(20px) brightness(0.7);
+  transform:scale(1.1);
+}
+
+/* الصورة الأصل */
+.bg-contain{
+  position:absolute;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
 }
 
 .top-bar{
+  position:relative;
   display:flex;
   align-items:center;
   gap:20px;
@@ -47,6 +64,7 @@ body{
   font-weight:bold;
   font-size:22px;
   letter-spacing:4px;
+  z-index:2;
 }
 
 .header::after{
@@ -59,17 +77,19 @@ body{
   background:white;
   border-top-left-radius:100% 80px;
   border-top-right-radius:100% 80px;
+  z-index:2;
 }
 
 .info-card{
   position:absolute;
   right:20px;
-  top:calc(200px - 70px);
+  top:calc(220px - 70px);
   width:120px;
   height:120px;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  z-index:3;
 }
 
 .info-card img{
@@ -141,7 +161,7 @@ body{
 
 .social-icons a.whatsapp{ background:#25D366; }
 
-/* ✅ إضافة يوتيوب */
+/* ✅ يوتيوب */
 .social-icons a.youtube{ background:#FF0000; }
 
 .social-icons a:hover{
@@ -233,7 +253,11 @@ body{
 <body>
 
 <div class="container">
+
   <div class="header">
+    <div class="bg-cover"></div>
+    <img id="bgContain" class="bg-contain" />
+
     <div class="top-bar">
       <span id="topName"></span>
     </div>
@@ -260,6 +284,7 @@ body{
       لو عايز تعمل صفحه و كارد زاي دول دوس هنا
     </a>
   </div>
+
 </div>
 
 <script>
@@ -278,22 +303,14 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-/* ✅ حل مشكلة الصور */
-const header = document.querySelector(".header");
+/* ✅ الخلفية الجديدة */
+const bgCover = document.querySelector(".bg-cover");
+const bgContain = document.getElementById("bgContain");
 
-const img = new Image();
-img.src = user.bgImage || "image/bg.jpg";
+const imgSrc = user.bgImage || "image/bg.jpg";
 
-img.onload = function(){
-  header.style.backgroundImage = `url('${img.src}')`;
-
-  if(img.height > img.width){
-    header.style.backgroundSize = "contain";
-    header.style.backgroundColor = "#000";
-  }else{
-    header.style.backgroundSize = "cover";
-  }
-};
+bgCover.style.backgroundImage = `url('${imgSrc}')`;
+bgContain.src = imgSrc;
 
 // الاسم
 if(user.topName){
