@@ -105,6 +105,7 @@
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1DwWeGqR2j/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/mohamed_elghareb__?igsh=MWdvN2l0dXN0Mzg2aw%3D%3D&utm_source=qr"},
+      {"name":"youtube","link":"https://youtube.com/@mrmohamedelghareb?si=oyEq3KBDokDjLudg"},
       {"name":"tiktok","link":"https://www.tiktok.com/@mohamedelghareb59?_r=1&_d=e83903jc0ilm86&sec_uid=MS4wLjABAAAAIMzcYfX-F0rNQ1ePOITX0F36T9WBfP45jBFSe1zQgx1OERYOzILrlzShWgqyEOSe&share_author_id=6945164172721046533&sharer_language=en&source=h5_m&u_code=dhl3574170g157&item_author_type=1&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=927D1042-5224-4598-8917-C4DA8F4E36CE&user_id=6945164172721046533&sec_user_id=MS4wLjABAAAAIMzcYfX-F0rNQ1ePOITX0F36T9WBfP45jBFSe1zQgx1OERYOzILrlzShWgqyEOSe&social_share_type=5&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233"},
       {"name":"whatsapp","link":"https://wa.me/201124389603"}
     ],
@@ -113,5 +114,33 @@
     ],
     "instructions": "Science is easy with me ya 3zizi💥",
     "mapLink": "https://goo.gl/maps/SvTdCmCMGFNEajrFA?g_st=aw"
+  },
+  {
+    "id": 113426,
+    "bgImage": "image/Omar.jpeg",
+    "placeName": "Omar Eladwy",
+    "social": [
+      {"name":"facebook","link":"https://www.facebook.com/share/1BcuehrUnk/?mibextid=wwXIfr"},
+      {"name":"instagram","link":"https://www.instagram.com/omar_eladwy_official?igsh=MWFjaGVqbDg1djVmZA%3D%3D&utm_source=qr"},
+      {"name":"tiktok","link":"https://www.tiktok.com/@omar_eladwy_official?_r=1&_t=ZS-94zHKwsKJuh"},
+      {"name":"whatsapp","link":"https://wa.me/201119600932"}
+    ],
+    "contacts": [
+      {"type":"phone","icon":"fas fa-phone","main":"01119600932","sub":"رقم الهاتف","link":"tel:01119600932"}
+    ]
+  },
+  {
+    "id": 124426,
+    "bgImage": "image/Hassan.jpg",
+    "placeName": "Hassan Arfa",
+    "social": [
+      {"name":"facebook","link":"https://www.facebook.com/share/1SEpj66Zi5/?mibextid=wwXIfr"},
+      {"name":"instagram","link":"https://www.instagram.com/hasan_arafa22?igsh=MXdiZTJuenR3NWFwYQ=="},
+      {"name":"tiktok","link":"https://www.tiktok.com/@hassanarafa46?_r=1&_t=ZS-95AsAOgb5nh"},
+      {"name":"whatsapp","link":"https://wa.me/201127492188"}
+    ],
+    "contacts": [
+      {"type":"phone","icon":"fas fa-phone","main":"01127492188","sub":"رقم الهاتف","link":"tel:01127492188"}
+    ]
   }
 ]
