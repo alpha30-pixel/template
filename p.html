@@ -26,10 +26,11 @@ body{
   padding-bottom:20px;
 }
 
-/* ✅ الهيدر الجديد */
+/* ✅ الهيدر بعد التعديل */
 .header{
   position:relative;
-  min-height:220px;
+  height:40vh; /* 🔥 كبرنا الهيدر */
+  min-height:280px;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -80,10 +81,11 @@ body{
   z-index:2;
 }
 
+/* ✅ عدلنا مكان الكارت */
 .info-card{
   position:absolute;
   right:20px;
-  top:calc(220px - 70px);
+  top:calc(40vh - 70px);
   width:120px;
   height:120px;
   border-radius:15px;
@@ -161,7 +163,6 @@ body{
 
 .social-icons a.whatsapp{ background:#25D366; }
 
-/* ✅ يوتيوب */
 .social-icons a.youtube{ background:#FF0000; }
 
 .social-icons a:hover{
@@ -303,7 +304,6 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-/* ✅ الخلفية الجديدة */
 const bgCover = document.querySelector(".bg-cover");
 const bgContain = document.getElementById("bgContain");
 
@@ -312,33 +312,28 @@ const imgSrc = user.bgImage || "image/bg.jpg";
 bgCover.style.backgroundImage = `url('${imgSrc}')`;
 bgContain.src = imgSrc;
 
-// الاسم
 if(user.topName){
 document.getElementById('topName').textContent = user.topName;
 }
 
-// الصورة
 if(user.image){
 document.getElementById('userImage').src = user.image;
 }else{
 document.getElementById('userImageCard').style.display='none';
 }
 
-// الاسم الرئيسي
 if(user.placeName){
 document.getElementById('placeName').textContent=user.placeName;
 }else{
 document.getElementById('placeName').style.display='none';
 }
 
-// الوصف
 if(user.placeDesc){
 document.getElementById('placeDesc').textContent=user.placeDesc;
 }else{
 document.getElementById('placeDesc').style.display='none';
 }
 
-// السوشيال
 const socialEl=document.getElementById("socialLinks");
 
 if(user.social){
@@ -354,7 +349,6 @@ socialEl.appendChild(a);
 socialEl.style.display="none";
 }
 
-// الكروت
 const contactsEl=document.getElementById("contactCards");
 
 if(user.contacts){
@@ -375,7 +369,6 @@ contactsEl.appendChild(a);
 });
 }
 
-// PDF
 if(user.pdf){
 const a=document.createElement("a");
 a.href=user.pdf;
@@ -393,14 +386,12 @@ a.innerHTML=`
 contactsEl.appendChild(a);
 }
 
-// instructions
 if(user.instructions){
 document.getElementById("instructions").textContent=user.instructions;
 }else{
 document.getElementById("instructions").style.display="none";
 }
 
-// map
 if(user.mapLink){
 document.getElementById("mapButton").href=user.mapLink;
 }else{
