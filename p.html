@@ -24,68 +24,57 @@ body{
   min-height:100vh;
   position:relative;
   padding-bottom:20px;
+  margin:auto;
 }
 
-/* ✅ الهيدر بعد التعديل */
+/* ✅ الهيدر الجديد */
 .header{
   position:relative;
-  height:40vh; /* 🔥 كبرنا الهيدر */
-  min-height:280px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-}
-
-/* خلفية Blur */
-.bg-cover{
-  position:absolute;
   width:100%;
-  height:100%;
-  background-position:center;
-  background-size:cover;
-  filter:blur(20px) brightness(0.7);
-  transform:scale(1.1);
+  max-width:500px;
+  margin:auto;
 }
 
-/* الصورة الأصل */
+/* ❌ لغينا البلور */
+.bg-cover{
+  display:none;
+}
+
+/* ✅ الصورة تاخد العرض بالكامل */
 .bg-contain{
-  position:absolute;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
+  width:100%;
+  height:auto;
+  display:block;
 }
 
+/* الاسم فوق الصورة */
 .top-bar{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:20px;
+  position:absolute;
+  bottom:10px;
+  right:15px;
   color:white;
   font-weight:bold;
-  font-size:22px;
-  letter-spacing:4px;
-  z-index:2;
+  font-size:20px;
+  background:rgba(0,0,0,0.4);
+  padding:5px 10px;
+  border-radius:8px;
 }
 
 .header::after{
   content:"";
-  position:absolute;
-  bottom:-1px;
-  left:0;
+  display:block;
   width:100%;
   height:15px;
   background:white;
   border-top-left-radius:100% 80px;
   border-top-right-radius:100% 80px;
-  z-index:2;
 }
 
-/* ✅ عدلنا مكان الكارت */
+/* الكارت */
 .info-card{
   position:absolute;
   right:20px;
-  top:calc(40vh - 70px);
+  top:220px;
   width:120px;
   height:120px;
   border-radius:15px;
@@ -112,8 +101,8 @@ body{
 .place-desc{
   padding-right:20px;
   text-align:right;
-  font-size:24px;
-  font-weight:1000;
+  font-size:20px;
+  font-weight:bold;
   color:black;
   line-height:1.6;
   margin-top:5px;
@@ -256,7 +245,6 @@ body{
 <div class="container">
 
   <div class="header">
-    <div class="bg-cover"></div>
     <img id="bgContain" class="bg-contain" />
 
     <div class="top-bar">
@@ -304,12 +292,8 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-const bgCover = document.querySelector(".bg-cover");
 const bgContain = document.getElementById("bgContain");
-
 const imgSrc = user.bgImage || "image/bg.jpg";
-
-bgCover.style.backgroundImage = `url('${imgSrc}')`;
 bgContain.src = imgSrc;
 
 if(user.topName){
@@ -398,10 +382,8 @@ document.getElementById("mapButton").href=user.mapLink;
 document.getElementById("mapButton").style.display="none";
 }
 
-/* 🔥 الجزء الجديد (التحكم في الزر) */
 const createSiteBtn = document.getElementById("createSite");
 
-/* افتراضي = يظهر */
 if(user.showCreateSite === false){
   createSiteBtn.style.display = "none";
 }
