@@ -6,6 +6,7 @@
     "image": "image/TA.png",
     "placeName": "ALPHA",
     "placeDesc": "بنختلف عن غيرنا كتير و بنساعدك تكون مختلف",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://facebook.com"},
       {"name":"instagram","link":"https://instagram.com"},
@@ -42,6 +43,7 @@
     "bgImage": "image/dina.jpg",
     "pdf": "files/DINA.pdf",
     "placeName": "Dr: DINA ADEL",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/adle.dina?mibextid=ZbWKwL"},
       {"name":"instagram","link":"https://www.instagram.com/adledina?igsh=YTc5dmRmNnprNHFw"},
@@ -58,6 +60,7 @@
     "bgImage": "image/bg.jpg",
     "placeName": "DAL3ONA",
     "placeDesc": "معانا يومك اجمل بكتير",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1ZfFe2dHrt/"},
       {"name":"instagram","link":"https://www.instagram.com/dal3ona_party?utm_source=qr&igsh=dnJvYWF0cGY0c21p"},
@@ -74,6 +77,7 @@
     "image": "image/dina.jpg",
     "bgImage": "image/bg.jpg",
     "placeName": "Dr: DINA ADEL",
+    "showCreateSite": true ,
     "contacts": [
       {"type":"phone","icon":"fas fa-phone","main":"01126822106","sub":"رقم الهاتف","link":"tel:01126822106"}
     ],
@@ -89,6 +93,7 @@
     "bgImage": "image/bg.jpg",
     "image": "image/sl.jpg",
     "placeName": "SKATE LOVERS",
+    "showCreateSite": true ,
     "social": [
       {"name":"instagram","link":"https://www.instagram.com/_skate_lovers?igsh=MWN5ZjU4cWE2cWU5MA%3D%3D&utm_source=qr"},
       {"name":"tiktok","link":"https://www.tiktok.com/@_skate_lovers?_r=1&_t=ZS-94zZhHdnaEK"},
@@ -102,6 +107,7 @@
     "id": 829326,
     "bgImage": "image/elghareb.jpeg",
     "placeName": "MR : MOHAMED ELGHAREB",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1DwWeGqR2j/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/mohamed_elghareb__?igsh=MWdvN2l0dXN0Mzg2aw%3D%3D&utm_source=qr"},
@@ -119,6 +125,7 @@
     "id": 113426,
     "bgImage": "image/Omar.jpeg",
     "placeName": "Omar Eladwy",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1BcuehrUnk/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/omar_eladwy_official?igsh=MWFjaGVqbDg1djVmZA%3D%3D&utm_source=qr"},
@@ -133,6 +140,7 @@
     "id": 124426,
     "bgImage": "image/Hassan.jpg",
     "placeName": "Hassan Arfa",
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1SEpj66Zi5/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/hasan_arafa22?igsh=MXdiZTJuenR3NWFwYQ=="},
