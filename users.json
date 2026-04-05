@@ -60,7 +60,7 @@
     "bgImage": "image/bg.jpg",
     "placeName": "DAL3ONA",
     "placeDesc": "معانا يومك اجمل بكتير",
-    "showCreateSite": true ,
+    "showCreateSite": false ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1ZfFe2dHrt/"},
       {"name":"instagram","link":"https://www.instagram.com/dal3ona_party?utm_source=qr&igsh=dnJvYWF0cGY0c21p"},
@@ -140,7 +140,7 @@
     "id": 124426,
     "bgImage": "image/Hassan.jpg",
     "placeName": "Hassan Arfa",
-    "showCreateSite": false ,
+    "showCreateSite": true ,
     "social": [
       {"name":"facebook","link":"https://www.facebook.com/share/1SEpj66Zi5/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/hasan_arafa22?igsh=MXdiZTJuenR3NWFwYQ=="},
