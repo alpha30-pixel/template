@@ -398,6 +398,14 @@ document.getElementById("mapButton").href=user.mapLink;
 document.getElementById("mapButton").style.display="none";
 }
 
+/* 🔥 الجزء الجديد (التحكم في الزر) */
+const createSiteBtn = document.getElementById("createSite");
+
+/* افتراضي = يظهر */
+if(user.showCreateSite === false){
+  createSiteBtn.style.display = "none";
+}
+
 });
 
 </script>
