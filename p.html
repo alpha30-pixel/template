@@ -144,6 +144,8 @@ body{
 
 .social-icons a.facebook{ background:#1877F2; }
 
+.social-icons a.facebook1{ background:#111; }
+
 .social-icons a.instagram{
   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
 }
@@ -325,7 +327,7 @@ user.social.forEach(s=>{
 const a=document.createElement("a");
 a.href=s.link;
 a.target="_blank";
-a.className=s.name;
+a.className = s.name;
 a.innerHTML=`<i class="fab fa-${s.name}"></i><span>${s.name}</span>`;
 socialEl.appendChild(a);
 });
