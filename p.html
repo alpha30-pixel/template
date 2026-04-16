@@ -319,16 +319,36 @@ document.getElementById('placeDesc').textContent=user.placeDesc;
 document.getElementById('placeDesc').style.display='none';
 }
 
-const socialEl=document.getElementById("socialLinks");
+const socialEl = document.getElementById("socialLinks");
 
 if(user.social){
 user.social.forEach(s=>{
+
 const a=document.createElement("a");
 a.href=s.link;
 a.target="_blank";
-a.className=s.name;
-a.innerHTML=`<i class="fab fa-${s.name}"></i><span>${s.name}</span>`;
+
+/* التعديل هنا */
+let icon = `fab fa-${s.name}`;
+let text = s.name;
+
+/* لو facebook1 */
+if(s.name === "facebook1"){
+  icon = "fab fa-facebook";
+  text = "facebook";
+}
+
+/* كلاس */
+a.className = s.name;
+
+/* HTML */
+a.innerHTML=`
+  <i class="${icon}"></i>
+  <span>${text}</span>
+`;
+
 socialEl.appendChild(a);
+
 });
 }else{
 socialEl.style.display="none";
@@ -382,10 +402,7 @@ document.getElementById("mapButton").href=user.mapLink;
 }else{
 document.getElementById("mapButton").style.display="none";
 }
-if(s.name === "facebook1"){
-  icon = "fab fa-facebook";
-  text = "facebook";
-}
+
 const createSiteBtn = document.getElementById("createSite");
 
 if(user.showCreateSite === false){
