@@ -160,9 +160,11 @@
       {"name":"facebook1","link":"https://www.facebook.com/ahmedhanyr1?mibextid=wwXIfr&mibextid=wwXIfr"},
       {"name":"facebook","link":"https://www.facebook.com/share/1NzSyo7LF6/?mibextid=wwXIfr"},
       {"name":"instagram","link":"https://www.instagram.com/ahmed_hany_rashdan?igsh=b294bDk0cWh4eHJu"},
-      {"name":"tiktok","link":"https://www.tiktok.com/@ahmed_hany_rashdan?_r=1&_t=ZS-95XE270eQDc"}
+      {"name":"tiktok","link":"https://www.tiktok.com/@ahmed_hany_rashdan?_r=1&_t=ZS-95XE270eQDc"},
+      {"name":"whatsapp","link":"https://wa.me/201030882872"}
     ],
     "contacts": [
+      {"type":"phone","icon":"fas fa-phone","main":"01030882872","sub":"رقم الهاتف","link":"tel:01030882872"},
       {"type":"email","icon":"fas fa-envelope","main":"ahany9013@gmail.com","sub":"البريد الإلكتروني","link":"mailto:ahany9013@gmail.com"}
     ]
   }
