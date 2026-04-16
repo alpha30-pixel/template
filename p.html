@@ -22,24 +22,12 @@ body{
   max-width:500px;
   background:white;
   min-height:100vh;
-  position:relative;
   padding-bottom:20px;
-  margin:auto;
 }
 
-.header{
-  position:relative;
-  width:100%;
-  max-width:500px;
-  margin:auto;
-}
-
-.bg-contain{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
+/* HEADER */
+.header{ position:relative; }
+.bg-contain{ width:100%; display:block; }
 .top-bar{
   position:absolute;
   bottom:10px;
@@ -55,95 +43,44 @@ body{
 .header::after{
   content:"";
   display:block;
-  width:100%;
   height:15px;
   background:white;
   border-top-left-radius:100% 80px;
   border-top-right-radius:100% 80px;
 }
 
-.info-card{
-  position:absolute;
-  right:20px;
-  top:220px;
-  width:120px;
-  height:120px;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
-  z-index:3;
-}
-
-.info-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.place-name{
-  margin-top:90px;
-  padding-right:20px;
-  text-align:right;
-  font-size:24px;
-  font-weight:bold;
-  color:#2c7be5;
-}
-
-.place-desc{
-  padding-right:20px;
-  text-align:right;
-  font-size:20px;
-  font-weight:bold;
-  color:black;
-  line-height:1.6;
-  margin-top:5px;
-}
-
-.follow{
-  margin-top:25px;
-  text-align:center;
-  font-size:18px;
-  font-weight:bold;
-}
-
+/* SOCIAL */
 .social-icons{
-  margin-top:15px;
   display:flex;
   justify-content:space-between;
   padding:0 10px;
+  margin-top:15px;
 }
 
 .social-icons a{
   flex:1;
   margin:0 5px;
+  height:80px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  height:80px;
   border-radius:12px;
   color:white;
   font-size:28px;
-  transition:0.3s;
   text-decoration:none;
 }
 
-.social-icons a span{
-  font-size:14px;
-  margin-top:5px;
-}
+.social-icons a span{ font-size:14px; margin-top:5px; }
 
-.social-icons a.facebook{ background:#1877F2; }
-.social-icons a.facebook1{ background:#111; }
+.facebook{ background:#1877F2; }
+.facebook1{ background:#111; }
+.instagram{ background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); }
+.tiktok{ background:#000; }
+.whatsapp{ background:#25D366; }
+.youtube{ background:#FF0000; }
 
-.social-icons a.instagram{
-  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-}
-
-.social-icons a.tiktok{ background:#010101; }
-.social-icons a.whatsapp{ background:#25D366; }
-.social-icons a.youtube{ background:#FF0000; }
-
+/* CONTACT */
 .info-card-link{
   margin:15px 10px;
   padding:15px;
@@ -151,46 +88,28 @@ body{
   border-radius:12px;
   display:flex;
   align-items:center;
-  cursor:pointer;
   box-shadow:0 4px 15px rgba(0,0,0,0.25);
   text-decoration:none;
 }
 
 .icon-circle{
-  width:40px;
-  height:40px;
+  width:40px;height:40px;
   border-radius:50%;
   background:rgba(0,0,0,0.05);
   display:flex;
   align-items:center;
   justify-content:center;
   margin-right:10px;
-  color:#000;
 }
 
-.info-text{
-  display:flex;
-  flex-direction:column;
-}
-
-.info-main{
-  font-size:18px;
-  font-weight:bold;
-  color:#000;
-}
-
-.info-sub{
-  font-size:14px;
-  color:#555;
-}
-
+/* TEXT */
 .instructions{
   margin:15px 10px;
   padding:15px;
   background:#f9f9f9;
   border-radius:12px;
   font-size:18px;
-  white-space: pre-line;
+  white-space:pre-line;
 }
 
 .map-button{
@@ -200,20 +119,13 @@ body{
   color:white;
   text-align:center;
   border-radius:12px;
-  text-decoration:none;
   display:block;
+  text-decoration:none;
 }
 
 .create-site{
   text-align:center;
   margin-top:15px;
-}
-
-.create-site a{
-  color:#000;
-  font-size:20px;
-  text-decoration:none;
-  border-bottom:1px dashed #aaa;
 }
 </style>
 </head>
@@ -223,27 +135,27 @@ body{
 <div class="container">
 
   <div class="header">
-    <img id="bgContain" class="bg-contain" />
+    <img id="bgContain" class="bg-contain">
     <div class="top-bar"><span id="topName"></span></div>
   </div>
 
-  <div class="info-card" id="userImageCard">
-    <img src="" id="userImage">
+  <div id="userImageCard">
+    <img id="userImage">
   </div>
 
-  <div class="place-name" id="placeName"></div>
-  <div class="place-desc" id="placeDesc"></div>
+  <div id="placeName"></div>
+  <div id="placeDesc"></div>
 
-  <div class="follow">تابعونا على</div>
   <div class="social-icons" id="socialLinks"></div>
 
   <div id="contactCards"></div>
-  <div class="instructions" id="instructions"></div>
 
-  <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
+  <div id="instructions" class="instructions"></div>
+
+  <a id="mapButton" class="map-button">عرض الموقع على الخريطة</a>
 
   <div class="create-site" id="createSite">
-    <a href="https://alpha30-pixel.github.io/template/p.html?id=510326" target="_blank">
+    <a href="https://alpha30-pixel.github.io/template/p.html?id=510326">
       لو عايز تعمل صفحه و كارد زاي دول دوس هنا
     </a>
   </div>
@@ -257,55 +169,115 @@ const userID = Number(params.get("id"));
 
 fetch("users.json")
 .then(res => res.json())
-.then(usersData => {
+.then(data => {
 
-const user = usersData.find(u => u.id === userID);
+const user = data.find(u => u.id === userID);
 
 if(!user){
 document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير موجود</h2>";
 return;
 }
 
-document.getElementById("bgContain").src = user.bgImage || "";
+/* BG */
+if(user.bgImage){
+document.getElementById("bgContain").src = user.bgImage;
+}
+
+/* TEXT */
 if(user.topName) document.getElementById("topName").textContent = user.topName;
-if(user.image) document.getElementById("userImage").src = user.image;
-else document.getElementById("userImageCard").style.display = "none";
+
+if(user.image){
+document.getElementById("userImage").src = user.image;
+} else {
+document.getElementById("userImageCard").style.display="none";
+}
 
 if(user.placeName) document.getElementById("placeName").textContent = user.placeName;
-else document.getElementById("placeName").style.display = "none";
+else document.getElementById("placeName").style.display="none";
 
 if(user.placeDesc) document.getElementById("placeDesc").textContent = user.placeDesc;
-else document.getElementById("placeDesc").style.display = "none";
+else document.getElementById("placeDesc").style.display="none";
 
+/* SOCIAL */
 const socialEl = document.getElementById("socialLinks");
 
-if(user.social){
-user.social.forEach(s => {
+if(user.social && user.social.length){
 
-const a = document.createElement("a");
-a.href = s.link;
-a.target = "_blank";
+user.social.forEach(s => {
 
 let icon = `fab fa-${s.name}`;
 let text = s.name;
 
 if(s.name === "facebook1"){
-  icon = "fab fa-facebook";
-  text = "facebook";
+icon = "fab fa-facebook";
+text = "facebook";
 }
 
+const a = document.createElement("a");
+a.href = s.link;
+a.target = "_blank";
 a.className = s.name;
 
-a.innerHTML = `
-  <i class="${icon}"></i>
-  <span>${text}</span>
-`;
+a.innerHTML = `<i class="${icon}"></i><span>${text}</span>`;
 
 socialEl.appendChild(a);
 
 });
+
 }else{
-socialEl.style.display = "none";
+socialEl.style.display="none";
+}
+
+/* CONTACTS */
+const contactEl = document.getElementById("contactCards");
+
+if(user.contacts && user.contacts.length){
+
+user.contacts.forEach(c => {
+
+if(!c.main || !c.icon) return;
+
+const a = document.createElement("a");
+a.href = c.link || "#";
+a.className = "info-card-link";
+
+a.innerHTML = `
+<div class="icon-circle"><i class="${c.icon}"></i></div>
+<div>
+<div>${c.main}</div>
+<small>${c.sub || ""}</small>
+</div>
+`;
+
+contactEl.appendChild(a);
+
+});
+
+}else{
+contactEl.style.display="none";
+}
+
+/* INSTRUCTIONS */
+const inst = document.getElementById("instructions");
+
+if(user.instructions && user.instructions.trim() !== ""){
+inst.textContent = user.instructions;
+}else{
+inst.style.display="none";
+}
+
+/* MAP */
+const mapBtn = document.getElementById("mapButton");
+
+if(user.mapLink){
+mapBtn.href = user.mapLink;
+}else{
+mapBtn.style.display="none";
+}
+
+/* CREATE SITE */
+if(user.showCreateSite === false){
+document.getElementById("createSite").style.display="none";
 }
 
 });
