@@ -27,7 +27,6 @@ body{
   margin:auto;
 }
 
-/* ✅ الهيدر الجديد */
 .header{
   position:relative;
   width:100%;
@@ -35,19 +34,12 @@ body{
   margin:auto;
 }
 
-/* ❌ لغينا البلور */
-.bg-cover{
-  display:none;
-}
-
-/* ✅ الصورة تاخد العرض بالكامل */
 .bg-contain{
   width:100%;
   height:auto;
   display:block;
 }
 
-/* الاسم فوق الصورة */
 .top-bar{
   position:absolute;
   bottom:10px;
@@ -70,7 +62,6 @@ body{
   border-top-right-radius:100% 80px;
 }
 
-/* الكارت */
 .info-card{
   position:absolute;
   right:20px;
@@ -147,18 +138,12 @@ body{
 .social-icons a.facebook1{ background:#111; }
 
 .social-icons a.instagram{
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
 }
 
 .social-icons a.tiktok{ background:#010101; }
-
 .social-icons a.whatsapp{ background:#25D366; }
-
 .social-icons a.youtube{ background:#FF0000; }
-
-.social-icons a:hover{
-  transform:scale(1.05);
-}
 
 .info-card-link{
   margin:15px 10px;
@@ -170,10 +155,6 @@ body{
   cursor:pointer;
   box-shadow:0 4px 15px rgba(0,0,0,0.25);
   text-decoration:none;
-}
-
-.info-card-link:hover{
-  background:#f0f0f0;
 }
 
 .icon-circle{
@@ -235,10 +216,6 @@ body{
   text-decoration:none;
   border-bottom:1px dashed #aaa;
 }
-
-.create-site a:hover{
-  color:#2c7be5;
-}
 </style>
 </head>
 
@@ -248,10 +225,7 @@ body{
 
   <div class="header">
     <img id="bgContain" class="bg-contain" />
-
-    <div class="top-bar">
-      <span id="topName"></span>
-    </div>
+    <div class="top-bar"><span id="topName"></span></div>
   </div>
 
   <div class="info-card" id="userImageCard">
@@ -265,7 +239,6 @@ body{
   <div class="social-icons" id="socialLinks"></div>
 
   <div id="contactCards"></div>
-
   <div class="instructions" id="instructions"></div>
 
   <a href="#" target="_blank" class="map-button" id="mapButton">عرض الموقع على الخريطة</a>
@@ -294,100 +267,49 @@ document.body.innerHTML = "<h2 style='text-align:center'>المستخدم غير
 return;
 }
 
-const bgContain = document.getElementById("bgContain");
-const imgSrc = user.bgImage || "image/bg.jpg";
-bgContain.src = imgSrc;
+document.getElementById("bgContain").src = user.bgImage || "";
+if(user.topName) document.getElementById("topName").textContent = user.topName;
+if(user.image) document.getElementById("userImage").src = user.image;
+else document.getElementById("userImageCard").style.display = "none";
 
-if(user.topName){
-document.getElementById('topName').textContent = user.topName;
-}
+if(user.placeName) document.getElementById("placeName").textContent = user.placeName;
+else document.getElementById("placeName").style.display = "none";
 
-if(user.image){
-document.getElementById('userImage').src = user.image;
-}else{
-document.getElementById('userImageCard').style.display='none';
-}
+if(user.placeDesc) document.getElementById("placeDesc").textContent = user.placeDesc;
+else document.getElementById("placeDesc").style.display = "none";
 
-if(user.placeName){
-document.getElementById('placeName').textContent=user.placeName;
-}else{
-document.getElementById('placeName').style.display='none';
-}
-
-if(user.placeDesc){
-document.getElementById('placeDesc').textContent=user.placeDesc;
-}else{
-document.getElementById('placeDesc').style.display='none';
-}
-
-const socialEl=document.getElementById("socialLinks");
+const socialEl = document.getElementById("socialLinks");
 
 if(user.social){
-user.social.forEach(s=>{
-const a=document.createElement("a");
-a.href=s.link;
-a.target="_blank";
+user.social.forEach(s => {
+
+const a = document.createElement("a");
+a.href = s.link;
+a.target = "_blank";
+
+/* تحديد النوع */
+let showText = true;
+let icon = `fab fa-${s.name}`;
+
+if(s.name === "facebook1"){
+  showText = false;
+  icon = "fab fa-facebook";
+}
+
+/* كلاس */
 a.className = s.name;
-a.innerHTML=`<i class="fab fa-${s.name}"></i><span>${s.name}</span>`;
+
+/* HTML */
+a.innerHTML = `
+  <i class="${icon}"></i>
+  ${showText ? `<span>${s.name}</span>` : ""}
+`;
+
 socialEl.appendChild(a);
+
 });
 }else{
-socialEl.style.display="none";
-}
-
-const contactsEl=document.getElementById("contactCards");
-
-if(user.contacts){
-user.contacts.forEach(c=>{
-const a=document.createElement("a");
-a.href=c.link || "#";
-a.className="info-card-link";
-
-a.innerHTML=`
-<div class="icon-circle"><i class="${c.icon}"></i></div>
-<div class="info-text">
-<span class="info-main">${c.main}</span>
-<span class="info-sub">${c.sub}</span>
-</div>
-`;
-
-contactsEl.appendChild(a);
-});
-}
-
-if(user.pdf){
-const a=document.createElement("a");
-a.href=user.pdf;
-a.target="_blank";
-a.className="info-card-link";
-
-a.innerHTML=`
-<div class="icon-circle"><i class="fas fa-file-pdf"></i></div>
-<div class="info-text">
-<span class="info-main">عرض الملف</span>
-<span class="info-sub">اضغط لفتح PDF</span>
-</div>
-`;
-
-contactsEl.appendChild(a);
-}
-
-if(user.instructions){
-document.getElementById("instructions").textContent=user.instructions;
-}else{
-document.getElementById("instructions").style.display="none";
-}
-
-if(user.mapLink){
-document.getElementById("mapButton").href=user.mapLink;
-}else{
-document.getElementById("mapButton").style.display="none";
-}
-
-const createSiteBtn = document.getElementById("createSite");
-
-if(user.showCreateSite === false){
-  createSiteBtn.style.display = "none";
+socialEl.style.display = "none";
 }
 
 });
